@@ -1,0 +1,28 @@
+{
+  "name": "CheckAppVersions",
+  "description": "Check App Versions for HERE",
+  "main": "Main.xaml",
+  "dependencies": {
+    "UiPath.UIAutomation.Activities": "[18.3.6859.25655]",
+    "UiPath.System.Activities": "[18.3.6859.25634]",
+    "UiPath.Excel.Activities": "[2.4.6856.17931]",
+    "UiPath.Mail.Activities": "[1.1.6562.21018]",
+    "UiPath.WebAPI.Activities": "[1.2.6863.33980]",
+    "UiPath.Script.Activities": "[1.0.6710.16240]"
+  },
+  "schemaVersion": "3.2",
+  "studioVersion": "18.3.1.48",
+  "projectVersion": "1.0.0.0",
+  "runtimeOptions": {
+    "autoDispose": false,
+    "excludedLoggedData": [
+      "Private:*",
+      "*password*"
+    ]
+  },
+  "projectType": "Workflow",
+  "libraryOptions": {
+    "includeOriginalXaml": false,
+    "privateWorkflows": []
+  }
+}
