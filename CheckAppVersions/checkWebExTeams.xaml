@@ -56,12 +56,15 @@
       <AssemblyReference>System.ServiceModel</AssemblyReference>
       <AssemblyReference>UiPath.Excel</AssemblyReference>
       <AssemblyReference>System.ValueTuple</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
   <Sequence DisplayName="checkWebExTeams" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="ui:GenericValue" Name="strLinkWin" />
+      <Variable x:TypeArguments="x:String" Name="strPathToSave" />
+      <Variable x:TypeArguments="x:String" Default="Downloads" Name="strFolder" />
+      <Variable x:TypeArguments="s:String[]" Name="arrURLSplit" />
+      <Variable x:TypeArguments="x:String" Name="strFileName" />
     </Sequence.Variables>
     <Sequence DisplayName="Web" sap2010:WorkflowViewState.IdRef="Sequence_3">
       <ui:OpenBrowser UiBrowser="{x:Null}" BrowserType="Firefox" DisplayName="Open https://www.webex.com/downloads.html" Hidden="False" sap2010:WorkflowViewState.IdRef="OpenBrowser_1" NewSession="True" Private="False" Url="https://www.webex.com/downloads.html">
@@ -71,12 +74,6 @@
               <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
             </ActivityAction.Argument>
             <Sequence DisplayName="Do" sap2010:WorkflowViewState.IdRef="Sequence_2">
-              <Sequence.Variables>
-                <Variable x:TypeArguments="x:String" Name="strFileName" />
-                <Variable x:TypeArguments="s:String[]" Name="arrURLSplit" />
-                <Variable x:TypeArguments="x:String" Default="Downloads" Name="strFolder" />
-                <Variable x:TypeArguments="x:String" Name="strPathToSave" />
-              </Sequence.Variables>
               <ui:GetAttribute ContinueOnError="{x:Null}" Attribute="href" DisplayName="Get Attribute 'A  http://www.webex.com...'" sap2010:WorkflowViewState.IdRef="GetAttribute_2">
                 <ui:GetAttribute.Result>
                   <OutArgument x:TypeArguments="ui:GenericValue">[strLinkWin]</OutArgument>
@@ -101,72 +98,73 @@
                   <InArgument x:TypeArguments="x:String">[arrURLSplit(arrURLSplit.Length-1)]</InArgument>
                 </Assign.Value>
               </Assign>
-              <Assign>
+              <Assign sap2010:WorkflowViewState.IdRef="Assign_3">
                 <Assign.To>
                   <OutArgument x:TypeArguments="x:String">[strPathToSave]</OutArgument>
                 </Assign.To>
                 <Assign.Value>
                   <InArgument x:TypeArguments="x:String">[strFolder +"\" + strFileName]</InArgument>
                 </Assign.Value>
-                <sap2010:WorkflowViewState.IdRef>Assign_3</sap2010:WorkflowViewState.IdRef>
               </Assign>
-              <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" Buttons="Ok" DisplayName="Message Box" sap2010:WorkflowViewState.IdRef="MessageBox_2" Text="[strLinkWin + vbNewLine + strFileName]" TopMost="True" />
-              <ui:HttpClient Body="{x:Null}" ConsumerKey="{x:Null}" ConsumerSecret="{x:Null}" ContinueOnError="{x:Null}" OAuth1Token="{x:Null}" OAuth1TokenSecret="{x:Null}" OAuth2Token="{x:Null}" Password="{x:Null}" Result="{x:Null}" StatusCode="{x:Null}" Username="{x:Null}" AcceptFormat="ANY" BodyFormat="application/xml" DisplayName="HTTP Request" EndPoint="[strLinkWin]" sap2010:WorkflowViewState.IdRef="HttpClient_2" Method="GET" ResourcePath="[strPathToSave]" TimeoutMS="6000">
-                <ui:HttpClient.Attachments>
-                  <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
-                </ui:HttpClient.Attachments>
-                <ui:HttpClient.Headers>
-                  <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
-                </ui:HttpClient.Headers>
-                <ui:HttpClient.Parameters>
-                  <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
-                </ui:HttpClient.Parameters>
-                <ui:HttpClient.UrlSegments>
-                  <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
-                </ui:HttpClient.UrlSegments>
-              </ui:HttpClient>
               <ui:CloseTab Browser="{x:Null}" sap2010:WorkflowViewState.IdRef="CloseTab_1" />
-              <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" Buttons="Ok" DisplayName="Message Box" sap2010:WorkflowViewState.IdRef="MessageBox_3" Text="fin" TopMost="True" />
             </Sequence>
           </ActivityAction>
         </ui:OpenBrowser.Body>
       </ui:OpenBrowser>
     </Sequence>
-    <sads:DebugSymbol.Symbol>d0BEOlxzZXJnZXlcRG9jdW1lbnRzXFVpUGF0aFxDaGVja0FwcFZlcnNpb25zXGNoZWNrV2ViRXhUZWFtcy54YW1sHD4DiAEOAgEBQgWGARACAQJDB4UBGAIBA0PfAUOFAgIBJUkNggEYAgEETT5NSQIBBVAPVyECASBYD18YAgEcYA9nGAIBFmgPcBgCARBxD3HeAQIBDnIPfx8CAQmAAQ+AAV4CAQiBAQ+BAbsBAgEGUEVQSwIBI1JCUk4CASFVogFVtwICASRdPF1TAgEfWj1aSgIBHWU6ZV0CARliO2JIAgEXbTptWAIBE2o7akoCARFxpAFxzAECAQ9y3QNy4wMCAQ1ywQNy0gMCAQty6QJy9wICAQqBAaQBgQGpAQIBBw==</sads:DebugSymbol.Symbol>
+    <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" Buttons="Ok" DisplayName="Message Box" sap2010:WorkflowViewState.IdRef="MessageBox_2" Text="[strLinkWin + vbNewLine + strFileName]" TopMost="True" />
+    <ui:CreateDirectory ContinueOnError="True" DisplayName="Create Downloads folder" sap2010:WorkflowViewState.IdRef="CreateDirectory_1" Path="[strFolder]" />
+    <ui:HttpClient Body="{x:Null}" ConsumerKey="{x:Null}" ConsumerSecret="{x:Null}" ContinueOnError="{x:Null}" OAuth1Token="{x:Null}" OAuth1TokenSecret="{x:Null}" OAuth2Token="{x:Null}" Password="{x:Null}" Result="{x:Null}" StatusCode="{x:Null}" Username="{x:Null}" AcceptFormat="ANY" BodyFormat="application/xml" DisplayName="HTTP Request" EndPoint="[strLinkWin]" sap2010:WorkflowViewState.IdRef="HttpClient_2" Method="GET" ResourcePath="[strPathToSave]" TimeoutMS="6000">
+      <ui:HttpClient.Attachments>
+        <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
+      </ui:HttpClient.Attachments>
+      <ui:HttpClient.Headers>
+        <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
+      </ui:HttpClient.Headers>
+      <ui:HttpClient.Parameters>
+        <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
+      </ui:HttpClient.Parameters>
+      <ui:HttpClient.UrlSegments>
+        <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
+      </ui:HttpClient.UrlSegments>
+    </ui:HttpClient>
+    <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" Buttons="Ok" DisplayName="Message Box" sap2010:WorkflowViewState.IdRef="MessageBox_3" Text="fin" TopMost="True" />
+    <sads:DebugSymbol.Symbol>d1REOlxNeSBEb2N1bWVudHNcR2l0SHViXENoZWNrQXBwbGljYXRpb25WZXJzaW9uXENoZWNrQXBwVmVyc2lvbnNcY2hlY2tXZWJFeFRlYW1zLnhhbWwfPQOFAQ4CAQFBNEE/AgECRQVyEAIBEHMFc9QBAgEOdAV0nwECAQp1BYIBFQIBBYMBBYMBsQECAQNGB3EYAgERc5oBc8IBAgEPdCl0LwIBDXSPAXScAQIBC3XTA3XZAwIBCXW3A3XIAwIBB3XfAnXtAgIBBoMBmgGDAZ8BAgEERt8BRoUCAgEpTA1uGAIBEk0PVCECASRVD1wYAgEgXQ9kGAIBGmUPbBgCARRtD21eAgETTUVNSwIBJ09CT04CASVSogFStwICAShaPFpTAgEjVz1XSgIBIWI6Yl0CAR1fO19IAgEbajpqWAIBF2c7Z0oCARU=</sads:DebugSymbol.Symbol>
   </Sequence>
   <sap2010:WorkflowViewState.ViewStateManager>
     <sap2010:ViewStateManager>
-      <sap2010:ViewStateData Id="GetAttribute_2" sap:VirtualizedContainerService.HintSize="314,134" />
-      <sap2010:ViewStateData Id="Assign_1" sap:VirtualizedContainerService.HintSize="314,60" />
-      <sap2010:ViewStateData Id="Assign_2" sap:VirtualizedContainerService.HintSize="314,60" />
-      <sap2010:ViewStateData Id="Assign_3" sap:VirtualizedContainerService.HintSize="314,60" />
-      <sap2010:ViewStateData Id="MessageBox_2" sap:VirtualizedContainerService.HintSize="314,59" />
-      <sap2010:ViewStateData Id="HttpClient_2" sap:VirtualizedContainerService.HintSize="314,22" />
-      <sap2010:ViewStateData Id="CloseTab_1" sap:VirtualizedContainerService.HintSize="314,22" />
-      <sap2010:ViewStateData Id="MessageBox_3" sap:VirtualizedContainerService.HintSize="314,59" />
-      <sap2010:ViewStateData Id="Sequence_2" sap:VirtualizedContainerService.HintSize="336,880">
+      <sap2010:ViewStateData Id="GetAttribute_2" sap:VirtualizedContainerService.HintSize="314.4,135.2" />
+      <sap2010:ViewStateData Id="Assign_1" sap:VirtualizedContainerService.HintSize="314.4,60" />
+      <sap2010:ViewStateData Id="Assign_2" sap:VirtualizedContainerService.HintSize="314.4,60" />
+      <sap2010:ViewStateData Id="Assign_3" sap:VirtualizedContainerService.HintSize="314.4,60" />
+      <sap2010:ViewStateData Id="CloseTab_1" sap:VirtualizedContainerService.HintSize="314.4,22.4" />
+      <sap2010:ViewStateData Id="Sequence_2" sap:VirtualizedContainerService.HintSize="336.8,622.4">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </sap2010:ViewStateData>
-      <sap2010:ViewStateData Id="OpenBrowser_1" sap:VirtualizedContainerService.HintSize="414,979" />
-      <sap2010:ViewStateData Id="Sequence_3" sap:VirtualizedContainerService.HintSize="436,1103">
+      <sap2010:ViewStateData Id="OpenBrowser_1" sap:VirtualizedContainerService.HintSize="414.4,722.4" />
+      <sap2010:ViewStateData Id="Sequence_3" sap:VirtualizedContainerService.HintSize="436.8,847.2">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </sap2010:ViewStateData>
-      <sap2010:ViewStateData Id="Sequence_1" sap:VirtualizedContainerService.HintSize="458,1227">
+      <sap2010:ViewStateData Id="MessageBox_2" sap:VirtualizedContainerService.HintSize="436.8,60" />
+      <sap2010:ViewStateData Id="CreateDirectory_1" sap:VirtualizedContainerService.HintSize="436.8,22.4" />
+      <sap2010:ViewStateData Id="HttpClient_2" sap:VirtualizedContainerService.HintSize="436.8,22.4" />
+      <sap2010:ViewStateData Id="MessageBox_3" sap:VirtualizedContainerService.HintSize="436.8,60" />
+      <sap2010:ViewStateData Id="Sequence_1" sap:VirtualizedContainerService.HintSize="459.2,1296.8">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </sap2010:ViewStateData>
-      <sap2010:ViewStateData Id="checkWebExTeams_1" sap:VirtualizedContainerService.HintSize="498,1307" />
+      <sap2010:ViewStateData Id="checkWebExTeams_1" sap:VirtualizedContainerService.HintSize="499.2,1376.8" />
     </sap2010:ViewStateManager>
   </sap2010:WorkflowViewState.ViewStateManager>
 </Activity>
