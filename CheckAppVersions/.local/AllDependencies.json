@@ -796,10 +796,11 @@
       ]
     },
     "System.Management.Automation/6.1.7601.17515": {
-      "sha512": "mOqRM+nD607Cw+2seNWfayjtsae41rcarVHgJ5aHIn2y2RF5N6z71bIOqrpITomKzi7R0msz5gUOco041+aDTw==",
+      "sha512": "JX7p60cNdLW86m/cfuHp3XQK5I8LZhOk1eONeMCqUpGwXnw0J/mLa02H5vzIglV7aKg24Oe7udae7Xmlhvdb+Q==",
       "type": "package",
       "path": "system.management.automation/6.1.7601.17515",
       "files": [
+        ".signature.p7s",
         "lib/net40/System.Management.Automation.dll",
         "lib/net45/System.Management.Automation.dll",
         "system.management.automation.6.1.7601.17515.nupkg.sha512",
@@ -1071,15 +1072,15 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\kruli\\.nuget\\packages\\": {}
+    "C:\\Users\\sergey.krulikovskiy\\.nuget\\packages\\": {}
   },
   "project": {
     "restore": {
       "projectUniqueName": "CheckAppVersions",
       "projectName": "CheckAppVersions",
-      "projectPath": "D:\\My Documents\\GitHub\\CheckApplicationVersion\\CheckAppVersions\\.local",
-      "packagesPath": "C:\\Users\\kruli\\.nuget\\packages\\",
-      "outputPath": "D:\\My Documents\\GitHub\\CheckApplicationVersion\\CheckAppVersions\\.local"
+      "projectPath": "D:\\sergey\\Documents\\GitHub\\CheckApplicationVersion\\CheckAppVersions\\.local",
+      "packagesPath": "C:\\Users\\sergey.krulikovskiy\\.nuget\\packages\\",
+      "outputPath": "D:\\sergey\\Documents\\GitHub\\CheckApplicationVersion\\CheckAppVersions\\.local"
     },
     "frameworks": {
       "net461": {
