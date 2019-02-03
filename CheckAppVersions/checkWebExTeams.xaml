@@ -79,7 +79,7 @@
                   <OutArgument x:TypeArguments="ui:GenericValue">[strLinkWin]</OutArgument>
                 </ui:GetAttribute.Result>
                 <ui:GetAttribute.Target>
-                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="6c5ac3fec7f460decc57cdf59e98ea57" Selector="&lt;html app='firefox.exe' title='Cisco Webex | Download' /&gt;&lt;webctrl aaname='Download' class='download-btn pc-win-download-btn' tag='A' /&gt;" WaitForReady="INTERACTIVE" />
+                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="6c5ac3fec7f460decc57cdf59e98ea57" Selector="&lt;html app='firefox.exe' title='Cisco Webex*' /&gt;&lt;webctrl aaname='Download' class='download-btn pc-win-download-btn-teams' tag='A' /&gt;" WaitForReady="INTERACTIVE" />
                 </ui:GetAttribute.Target>
               </ui:GetAttribute>
               <Assign sap2010:WorkflowViewState.IdRef="Assign_1">
@@ -129,24 +129,24 @@
       </ui:HttpClient.UrlSegments>
     </ui:HttpClient>
     <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" Buttons="Ok" DisplayName="Message Box" sap2010:WorkflowViewState.IdRef="MessageBox_3" Text="fin" TopMost="True" />
-    <sads:DebugSymbol.Symbol>d1REOlxNeSBEb2N1bWVudHNcR2l0SHViXENoZWNrQXBwbGljYXRpb25WZXJzaW9uXENoZWNrQXBwVmVyc2lvbnNcY2hlY2tXZWJFeFRlYW1zLnhhbWwfPQOFAQ4CAQFBNEE/AgECRQVyEAIBEHMFc9QBAgEOdAV0nwECAQp1BYIBFQIBBYMBBYMBsQECAQNGB3EYAgERc5oBc8IBAgEPdCl0LwIBDXSPAXScAQIBC3XTA3XZAwIBCXW3A3XIAwIBB3XfAnXtAgIBBoMBmgGDAZ8BAgEERt8BRoUCAgEpTA1uGAIBEk0PVCECASRVD1wYAgEgXQ9kGAIBGmUPbBgCARRtD21eAgETTUVNSwIBJ09CT04CASVSogFStwICAShaPFpTAgEjVz1XSgIBIWI6Yl0CAR1fO19IAgEbajpqWAIBF2c7Z0oCARU=</sads:DebugSymbol.Symbol>
+    <sads:DebugSymbol.Symbol>d1hEOlxzZXJnZXlcRG9jdW1lbnRzXEdpdEh1YlxDaGVja0FwcGxpY2F0aW9uVmVyc2lvblxDaGVja0FwcFZlcnNpb25zXGNoZWNrV2ViRXhUZWFtcy54YW1sHz0DhQEOAgEBQTRBPwIBAkUFchACARBzBXPUAQIBDnQFdJ8BAgEKdQWCARUCAQWDAQWDAbEBAgEDRgdxGAIBEXOaAXPCAQIBD3QpdC8CAQ10jwF0nAECAQt10wN12QMCAQl1twN1yAMCAQd13wJ17QICAQaDAZoBgwGfAQIBBEbfAUaFAgIBKUwNbhgCARJND1QhAgEkVQ9cGAIBIF0PZBgCARplD2wYAgEUbQ9tXgIBE01FTUsCASdPQk9OAgElUqIBUrMCAgEoWjxaUwIBI1c9V0oCASFiOmJdAgEdXztfSAIBG2o6algCARdnO2dKAgEV</sads:DebugSymbol.Symbol>
   </Sequence>
   <sap2010:WorkflowViewState.ViewStateManager>
     <sap2010:ViewStateManager>
-      <sap2010:ViewStateData Id="GetAttribute_2" sap:VirtualizedContainerService.HintSize="314.4,135.2" />
-      <sap2010:ViewStateData Id="Assign_1" sap:VirtualizedContainerService.HintSize="314.4,60" />
-      <sap2010:ViewStateData Id="Assign_2" sap:VirtualizedContainerService.HintSize="314.4,60" />
-      <sap2010:ViewStateData Id="Assign_3" sap:VirtualizedContainerService.HintSize="314.4,60" />
-      <sap2010:ViewStateData Id="CloseTab_1" sap:VirtualizedContainerService.HintSize="314.4,22.4" />
-      <sap2010:ViewStateData Id="Sequence_2" sap:VirtualizedContainerService.HintSize="336.8,622.4">
+      <sap2010:ViewStateData Id="GetAttribute_2" sap:VirtualizedContainerService.HintSize="314,134" />
+      <sap2010:ViewStateData Id="Assign_1" sap:VirtualizedContainerService.HintSize="314,60" />
+      <sap2010:ViewStateData Id="Assign_2" sap:VirtualizedContainerService.HintSize="314,60" />
+      <sap2010:ViewStateData Id="Assign_3" sap:VirtualizedContainerService.HintSize="314,60" />
+      <sap2010:ViewStateData Id="CloseTab_1" sap:VirtualizedContainerService.HintSize="314,22" />
+      <sap2010:ViewStateData Id="Sequence_2" sap:VirtualizedContainerService.HintSize="336,620">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </sap2010:ViewStateData>
-      <sap2010:ViewStateData Id="OpenBrowser_1" sap:VirtualizedContainerService.HintSize="414.4,722.4" />
-      <sap2010:ViewStateData Id="Sequence_3" sap:VirtualizedContainerService.HintSize="436.8,847.2">
+      <sap2010:ViewStateData Id="OpenBrowser_1" sap:VirtualizedContainerService.HintSize="414,719" />
+      <sap2010:ViewStateData Id="Sequence_3" sap:VirtualizedContainerService.HintSize="437,843">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -157,14 +157,14 @@
       <sap2010:ViewStateData Id="CreateDirectory_1" sap:VirtualizedContainerService.HintSize="436.8,22.4" />
       <sap2010:ViewStateData Id="HttpClient_2" sap:VirtualizedContainerService.HintSize="436.8,22.4" />
       <sap2010:ViewStateData Id="MessageBox_3" sap:VirtualizedContainerService.HintSize="436.8,60" />
-      <sap2010:ViewStateData Id="Sequence_1" sap:VirtualizedContainerService.HintSize="459.2,1296.8">
+      <sap2010:ViewStateData Id="Sequence_1" sap:VirtualizedContainerService.HintSize="459,1291">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </sap2010:ViewStateData>
-      <sap2010:ViewStateData Id="checkWebExTeams_1" sap:VirtualizedContainerService.HintSize="499.2,1376.8" />
+      <sap2010:ViewStateData Id="checkWebExTeams_1" sap:VirtualizedContainerService.HintSize="499,1371" />
     </sap2010:ViewStateManager>
   </sap2010:WorkflowViewState.ViewStateManager>
 </Activity>

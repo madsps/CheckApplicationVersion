@@ -70,9 +70,9 @@
               <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
             </ActivityAction.Argument>
             <Sequence DisplayName="Do" sap2010:WorkflowViewState.IdRef="Sequence_1">
-              <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Windows Version" sap2010:WorkflowViewState.IdRef="GetValue_1">
+              <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text 'SPAN'" sap2010:WorkflowViewState.IdRef="GetValue_3">
                 <ui:GetValue.Target>
-                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="6e4f0ea2069c56c2bbffeb4c17e59dbc" Selector="&lt;webctrl css-selector='body&amp;gt;section&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;p' parentid='page-main-content' tag='P' idx='2' /&gt;&lt;webctrl tag='a' class='*download-for-pc*' /&gt;&lt;webctrl tag='span' /&gt;&lt;webctrl tag='span' class='version-number' /&gt;" WaitForReady="COMPLETE" />
+                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="1affaff611182d5c6500266e2d1c2cfa" Selector="&lt;html app='firefox.exe' title='Jabra Direct*' /&gt;&lt;webctrl tag='a' class='*download-for-pc*' /&gt;&lt;webctrl tag='span' class='version-number' /&gt;" WaitForReady="INTERACTIVE" />
                 </ui:GetValue.Target>
                 <ui:GetValue.Value>
                   <OutArgument x:TypeArguments="x:String">[strWindowsVersion]</OutArgument>
@@ -80,7 +80,7 @@
               </ui:GetValue>
               <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Mac Version" sap2010:WorkflowViewState.IdRef="GetValue_2">
                 <ui:GetValue.Target>
-                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="1b08084506fccbce6baa6f807987aafa" Selector="&lt;webctrl css-selector='body&amp;gt;section&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;p' parentid='page-main-content' tag='P' idx='2' /&gt;&lt;webctrl tag='a' class='*download-for-mac*' /&gt;&lt;webctrl tag='span' /&gt;&lt;webctrl tag='span' class='version-number' /&gt;" WaitForReady="COMPLETE" />
+                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="1b08084506fccbce6baa6f807987aafa" Selector="&lt;html app='firefox.exe' title='Jabra Direct*' /&gt;&lt;webctrl tag='a' class='*download-for-mac*' /&gt;&lt;webctrl tag='span' class='version-number' /&gt;" WaitForReady="COMPLETE" />
                 </ui:GetValue.Target>
                 <ui:GetValue.Value>
                   <OutArgument x:TypeArguments="x:String">[strMacVersion]</OutArgument>
@@ -93,37 +93,37 @@
         </ui:OpenBrowser.Body>
       </ui:OpenBrowser>
     </Sequence>
-    <sads:DebugSymbol.Symbol>d09EOlxNeSBEb2N1bWVudHNcR2l0SHViXENoZWNrQXBwbGljYXRpb25WZXJzaW9uXENoZWNrQXBwVmVyc2lvbnNcY2hlY2tKYWJyYS54YW1sDjwDYQ4CAQE9BV8QAgECQgdeGAIBA0LzAUKsAgIBEEgNWxgCAQRJD1AdAgEMUQ9YHQIBCFkPWZECAgEGWg9adgIBBU47Tk4CAQ1LogFL0gMCAQ9WO1ZKAgEJU6IBU9MDAgELWaQBWf8BAgEH</sads:DebugSymbol.Symbol>
+    <sads:DebugSymbol.Symbol>d1NEOlxzZXJnZXlcRG9jdW1lbnRzXEdpdEh1YlxDaGVja0FwcGxpY2F0aW9uVmVyc2lvblxDaGVja0FwcFZlcnNpb25zXGNoZWNrSmFicmEueGFtbA48A2EOAgEBPQVfEAIBAkIHXhgCAQNC8wFCrAICARBIDVsYAgEESQ9QHQIBDFEPWB0CAQhZD1mRAgIBBloPWnYCAQVOO05OAgENS6IBS8ACAgEPVjtWSgIBCVOiAVPBAgIBC1mkAVn/AQIBBw==</sads:DebugSymbol.Symbol>
   </Sequence>
   <sap2010:WorkflowViewState.ViewStateManager>
     <sap2010:ViewStateManager>
-      <sap2010:ViewStateData Id="GetValue_1" sap:VirtualizedContainerService.HintSize="314.4,107.2" />
-      <sap2010:ViewStateData Id="GetValue_2" sap:VirtualizedContainerService.HintSize="314.4,107.2" />
-      <sap2010:ViewStateData Id="MessageBox_1" sap:VirtualizedContainerService.HintSize="314.4,60" />
-      <sap2010:ViewStateData Id="CloseTab_1" sap:VirtualizedContainerService.HintSize="314.4,22.4" />
-      <sap2010:ViewStateData Id="Sequence_1" sap:VirtualizedContainerService.HintSize="336.8,541.6">
+      <sap2010:ViewStateData Id="GetValue_3" sap:VirtualizedContainerService.HintSize="314,106" />
+      <sap2010:ViewStateData Id="GetValue_2" sap:VirtualizedContainerService.HintSize="314,106" />
+      <sap2010:ViewStateData Id="MessageBox_1" sap:VirtualizedContainerService.HintSize="314,59" />
+      <sap2010:ViewStateData Id="CloseTab_1" sap:VirtualizedContainerService.HintSize="314,22" />
+      <sap2010:ViewStateData Id="Sequence_1" sap:VirtualizedContainerService.HintSize="336,537">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </sap2010:ViewStateData>
-      <sap2010:ViewStateData Id="OpenBrowser_1" sap:VirtualizedContainerService.HintSize="414.4,641.6" />
-      <sap2010:ViewStateData Id="Sequence_2" sap:VirtualizedContainerService.HintSize="436.8,766.4">
+      <sap2010:ViewStateData Id="OpenBrowser_1" sap:VirtualizedContainerService.HintSize="414,636" />
+      <sap2010:ViewStateData Id="Sequence_2" sap:VirtualizedContainerService.HintSize="436,760">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </sap2010:ViewStateData>
-      <sap2010:ViewStateData Id="Sequence_3" sap:VirtualizedContainerService.HintSize="459.2,891.2">
+      <sap2010:ViewStateData Id="Sequence_3" sap:VirtualizedContainerService.HintSize="458,884">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </sap2010:ViewStateData>
-      <sap2010:ViewStateData Id="checkJabra_1" sap:VirtualizedContainerService.HintSize="499.2,971.2" />
+      <sap2010:ViewStateData Id="checkJabra_1" sap:VirtualizedContainerService.HintSize="498,964" />
     </sap2010:ViewStateManager>
   </sap2010:WorkflowViewState.ViewStateManager>
 </Activity>
